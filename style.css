@@ -1,0 +1,83 @@
+body {
+  margin: 0;
+  height: 100vh;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+  color: white;
+}
+
+/* Canvas */
+#fireworks {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+/* Content */
+.container {
+  text-align: center;
+  cursor: pointer;
+}
+
+#year {
+  font-size: 90px;
+  transition: opacity 0.5s;
+}
+
+#bomb {
+  font-size: 60px;
+  display: none;
+  animation: shake 0.3s infinite;
+}
+
+.hint {
+  opacity: 0.6;
+  font-size: 16px;
+}
+
+/* Animations */
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+.explosion {
+  animation: explode 1s forwards;
+}
+
+@keyframes explode {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+.glow {
+  text-shadow: 0 0 20px gold, 0 0 40px orange;
+}
+
+/* Buttons */
+#muteBtn, #shareBtn {
+  position: fixed;
+  top: 20px;
+  font-size: 22px;
+  background: rgba(255,255,255,0.1);
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#muteBtn { right: 20px; }
+#shareBtn { right: 70px; }
